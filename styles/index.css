@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 
+:root {
+    --cor1: #222;
+    --cor2: #fff;
+}
+
 body {
     min-height: 200vh;
-    background: #222;
-    
+    background: var(--cor1); 
 }
 
 h1 {
@@ -21,12 +25,12 @@ h1 {
 
 .inicio .title {
     position: fixed;
-    top: 50%;
-    width: 100%;
-    padding-right: 50px;
-    text-align: right;
+    top: 59%;
+    width: 60%;
+    right: 0;
+    text-align: center;
     transform: translatey(-50%);
-    color: #fff;
+    color: var(--cor2);
     z-index: 1;
     font-size: 10vw;
 }
@@ -43,7 +47,7 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: center;
-    color: white;
+    color: var(--cor2);
     transition: 1s;
     font-size: 1.6em;
 }
@@ -58,8 +62,8 @@ h1 {
     height: 20px;
     background: transparent;
     z-index: 2;
-    border-left: 5px solid #fff;
-    border-top: 5px solid #fff;
+    border-left: 5px solid var(--cor2);
+    border-top: 5px solid var(--cor2);
     border-radius: 5px;
 }
 
@@ -73,69 +77,82 @@ h1 {
     height: 20px;
     background: transparent;
     z-index: 2;
-    border-left: 5px solid #fff;
-    border-top: 5px solid #fff;
+    border-left: 5px solid var(--cor2);
+    border-top: 5px solid var(--cor2);
     border-radius: 5px;
 }
 
-.inicio .wallpaper {
+.inicio .home {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: var(--cor2);
     clip-path: circle(0px at bottom center);
     z-index: 2;
     transition: .1s;
 }
 
-.inicio .wallpaper div {
+.inicio .home .image {
     width: 40%;
     height: 100%;
-    background-image: url(/imgs/20230827_175147.jpg);
+    background-image: url(../imgs/20230827_175147.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.inicio .wallpaper .inner-title {
+.inicio .home .acess {
+    width: 60%;
+    height: 100%;
+    top: 0;
+    right: 0;
     position: fixed;
     display: flex;
-    align-items: center;
+}
+
+.inicio .home .acess .inner-title {
+    width: 100%;
+    height: 70%;
+    display: flex;
     justify-content: center;
-    top: 50%;
-    width: 60%;
-    right: 0;
-    height: 100%;
-    text-align: center;
-    transform: translatey(-50%);
-    color: #222;
-    z-index: 1;
+    align-items: end;
     font-size: 10vw;
 }
 
-.inicio .wallpaper a {
+.inicio .home .acess .btn {
     position: absolute;
-    bottom: 30vh;
-    right: 30vw;
+    height: 30%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.inicio .home .acess .btn a {
     width: 130px;
     height: 60px;
     z-index: 2;
     border: none;
     border-radius: 50px;
     outline: none;
-    background: #222;
+    background: var(--cor1);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: var(--cor2);
     text-decoration: none;
     transition: .5s;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.inicio .wallpaper a:hover {
-    border: 1px solid #222;
-    color: #222;
-    background: #eee;
+.inicio .home .acess a:hover {
+    border: 1px solid var(--cor1);
+    color: var(--cor1);
+    background: var(--cor2);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3),
                 0 0 35px rgba(0, 0, 0, 0.1);
 } 
+
+.mobile {
+    display: none;
+}

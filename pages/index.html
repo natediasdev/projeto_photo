@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/mediaqueries_index.css">
+    <title>MyPortfolio</title>
+</head>
+<body>
+    <section class="inicio">
+        <h1 class="title">MyPortfolio</h1>
+        <div class="scrollUp-box">
+            <span class="scrollUp">Scroll Up</span>
+        </div>
+        <section class="home">
+            <div class="image"></div>
+            <section class="acess">
+                <h1 class="inner-title">MyPortfolio</h1>
+                <div class="btn">
+                    <a href="../pages/portfolio.html">Open CV</a>
+                </div>
+                <a class="mobile" href="../pages/portfolio.html"></a>
+            </section>
+            
+        </section>
+    </section>
+    <script>
+        let section = document.querySelector(".home");
+        let scrollUp = document.querySelector(".scrollUp")
+        window.addEventListener("scroll", function(){
+            let value = window.scrollY;
+            if (value == 0) {
+                section.style.clipPath = "circle(0px at bottom center)"
+                scrollUp.style.opacity = "1"
+            } else {
+                section.style.clipPath = "circle("+ value * 1.5 +"px at bottom center)"
+                scrollUp.style.opacity = "0"
+            }
+        })
+    </script>
+</body>
+</html>
