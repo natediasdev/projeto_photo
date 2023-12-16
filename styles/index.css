@@ -5,12 +5,15 @@
 }
 
 :root {
-    --cor1: #222;
-    --cor2: #fff;
+    --cor1: #fff;
+    --cor2: #222;
+    --cor3: #777;
+    --cor4: #bbb;
+    --cor5: #ccc;
 }
 
 body {
-    min-height: 200vh;
+    min-height: 340vh;
     background: var(--cor1); 
 }
 
@@ -20,10 +23,10 @@ h1 {
 
 .inicio {
     width: 100%;
-    min-height: 200vh;
+    height: 200vh;
 }
 
-.inicio .title {
+.inicio .titulo {
     position: fixed;
     top: 59%;
     width: 60%;
@@ -35,7 +38,7 @@ h1 {
     font-size: 10vw;
 }
 
-.inicio .scrollUp-box {
+.inicio .caixa-de-rolagem {
     position: absolute;
     height: 37px;
     bottom: 0;
@@ -43,7 +46,7 @@ h1 {
     transform: translateX(-50%);
 }
 
-.inicio .scrollUp-box .scrollUp {
+.inicio .caixa-de-rolagem .rolagem {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -52,7 +55,7 @@ h1 {
     font-size: 1.6em;
 }
 
-.scrollUp::before {
+.rolagem::before {
     content: '';
     position: absolute;
     bottom: 50px;
@@ -67,7 +70,7 @@ h1 {
     border-radius: 5px;
 }
 
-.scrollUp::after {
+.rolagem::after {
     content: '';
     position: absolute;
     bottom: 35px;
@@ -82,26 +85,29 @@ h1 {
     border-radius: 5px;
 }
 
-.inicio .home {
+.ajustes {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    background: var(--cor2);
-    clip-path: circle(0px at bottom center);
-    z-index: 2;
-    transition: .1s;
 }
 
-.inicio .home .image {
+.inicio .pagina-inicial {
+    background: var(--cor2);
+    z-index: 2;
+    transition: .1s;   
+    clip-path: circle(0px at bottom center);
+}
+
+.inicio .pagina-inicial .image {
     width: 40%;
     height: 100%;
-    background-image: url(../imgs/20230827_175147.jpg);
+    background-image: url(../imgs/minhafoto1.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.inicio .home .acess {
+.inicio .pagina-inicial .segunda-pagina {
     width: 60%;
     height: 100%;
     top: 0;
@@ -110,7 +116,7 @@ h1 {
     display: flex;
 }
 
-.inicio .home .acess .inner-title {
+.inicio .pagina-inicial .segunda-pagina .segundo-titulo {
     width: 100%;
     height: 70%;
     display: flex;
@@ -119,40 +125,65 @@ h1 {
     font-size: 10vw;
 }
 
-.inicio .home .acess .btn {
-    position: absolute;
-    height: 30%;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
+.inicio .pagina-inicial .segunda-pagina .galeria{
+    height: 100vh;
+    z-index: 3;
+    background: var(--cor5);   
+    clip-path: circle(0px at bottom center);
 }
 
-.inicio .home .acess .btn a {
-    width: 130px;
-    height: 60px;
-    z-index: 2;
-    border: none;
-    border-radius: 50px;
-    outline: none;
-    background: var(--cor1);
+.galeria .exibicao-de-fotos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.galeria .exibicao-de-fotos .foto {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.galeria .exibicao-de-fotos .foto .imagem {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease-in-out;
+    opacity: 1;
+}
+.galeria .exibicao-de-fotos .foto:hover .imagem {
+    opacity: 0;
+}
+
+.galeria .exibicao-de-fotos .foto .imagem img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.galeria .exibicao-de-fotos .foto .numeracao-da-foto {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    opacity: 0;
+    transition: .5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--cor2);
-    text-decoration: none;
-    transition: .5s;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.inicio .home .acess a:hover {
-    border: 1px solid var(--cor1);
-    color: var(--cor1);
-    background: var(--cor2);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3),
-                0 0 35px rgba(0, 0, 0, 0.1);
-} 
+.galeria .exibicao-de-fotos .foto:hover .numeracao-da-foto {
+    opacity: 1;
+}
 
-.mobile {
-    display: none;
+.galeria .exibicao-de-fotos .foto:hover .numeracao-da-foto span {
+    font-size: 1.7em;
+    color: white;
 }

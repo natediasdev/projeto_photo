@@ -5,38 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="stylesheet" href="../styles/mediaqueries_index.css">
-    <title>MyPortfolio</title>
+    <link rel="shortcut icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <title>Minha Galeria</title>
 </head>
 <body>
     <section class="inicio">
-        <h1 class="title">MyPortfolio</h1>
-        <div class="scrollUp-box">
-            <span class="scrollUp">Scroll Up</span>
+        <h1 class="titulo">Nathan Dias</h1>
+        <div class="caixa-de-rolagem">
+            <span class="rolagem">Scroll Up</span>
         </div>
-        <section class="home">
-            <div class="image"></div>
-            <section class="acess">
-                <h1 class="inner-title">MyPortfolio</h1>
-                <div class="btn">
-                    <a href="../pages/portfolio.html">Open CV</a>
-                </div>
-                <a class="mobile" href="../pages/portfolio.html"></a>
+        <section class="pagina-inicial ajustes">
+            <div class="minha-foto"></div>
+            <section class="segunda-pagina">
+                <h1 class="segundo-titulo">Nathan Dias</h1>
+                <section class="galeria ajustes">
+                    <div class="exibicao-de-fotos">
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img1.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 01</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img2.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 02</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img3.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 03</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img4.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 04</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img5.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 05</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img6.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 06</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img7.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 07</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img8.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 08</span>
+                            </div>
+                        </div>
+                        <div class="foto">
+                            <div class="imagem">
+                                <img src="../imgs/img9.jpg">
+                            </div>
+                            <div class="numeracao-da-foto">
+                                <span>Foto 09</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
-            
         </section>
     </section>
     <script>
-        let section = document.querySelector(".home");
-        let scrollUp = document.querySelector(".scrollUp")
+        let pagina_inicial = document.querySelector(".pagina-inicial");
+        let galeria = document.querySelector(".galeria")
+        let rolagem = document.querySelector(".rolagem")
         window.addEventListener("scroll", function(){
-            let value = window.scrollY;
-            if (value == 0) {
-                section.style.clipPath = "circle(0px at bottom center)"
-                scrollUp.style.opacity = "1"
+            let scrollY = window.scrollY;
+            
+            if (scrollY == 0) {
+                pagina_inicial.style.clipPath = "circle(0px at bottom center)"
+                rolagem.style.opacity = "1"
             } else {
-                section.style.clipPath = "circle("+ value * 1.5 +"px at bottom center)"
-                scrollUp.style.opacity = "0"
+                pagina_inicial.style.clipPath = "circle("+ scrollY * 3 +"px at bottom center)"
+                rolagem.style.opacity = "0"
             }
+            galeria.style.clipPath = "circle("+ scrollY / 2 +"px at bottom center)"
         })
     </script>
 </body>
